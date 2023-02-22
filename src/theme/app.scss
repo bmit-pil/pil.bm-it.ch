@@ -1,0 +1,53 @@
+@use "sass:color";
+
+$primary: #ba70ff;
+$dark: #534064;
+$secondary: #676778;
+$light-surface: #414141;
+$surface: #353535;
+$background: #353535;
+
+@mixin absolute-centered {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.dashed-line {
+  --s: 15px; /* control the space between dashes */
+
+  width: 6px;
+  height: 100%;
+  background: radial-gradient(circle closest-side, $primary 98%, #0000) 0 0/100%
+      var(--s),
+    linear-gradient($primary 50%, #0000 0) 0 calc(var(--s) / 2) / 100%
+      calc(2 * var(--s));
+}
+
+.dashed-line-alt {
+  --s: 15px;
+
+  height: 6px;
+  background: radial-gradient(circle closest-side, $primary 98%, #0000) 0 0 /
+      var(--s) 100%,
+    linear-gradient(90deg, $primary 50%, #0000 0) calc(var(--s) / 2) 0 /
+      calc(2 * var(--s)) 100%;
+}
+
+.fade {
+  &-right {
+    background: linear-gradient(to right, $primary, $background);
+  }
+  &-left {
+    background: linear-gradient(to left, $primary, $background);
+  }
+  &-top {
+    background: linear-gradient(to top, $primary, $background);
+  }
+  &-bottom {
+    background: linear-gradient(to bottom, $primary, $background);
+  }
+}

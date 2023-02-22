@@ -1,20 +1,27 @@
-@use 'sass:color';
+@use "sass:color";
 
-@use '@material/theme/color-palette';
+@use "@material/theme/color-palette";
 
 // Svelte Colors!
-@use '@material/theme/index' as theme with (
-  $primary: #ff3e00,
+@use "@material/theme/index" as theme with (
+  $primary: #ba70ff,
   $secondary: #676778,
-  $surface: #fff,
-  $background: #fff,
+  $surface: #353535,
+  $background: #353535,
   $error: color-palette.$red-900
 );
 
 html,
 body {
+  margin: 0;
   background-color: theme.$surface;
   color: theme.$on-surface;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  color: theme.$primary;
 }
 
 a {
@@ -22,4 +29,8 @@ a {
 }
 a:visited {
   color: color.scale(#40b3ff, $lightness: -35%);
+}
+
+code {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
 }
